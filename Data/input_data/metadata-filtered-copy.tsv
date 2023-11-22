@@ -1,0 +1,230 @@
+sampleid	Sample	Cultivar	Flower.or.leaf	Phenological.stage.old	Phenological.stage	Location.on.tree	Collection.date	Tree.number	Plate	CPS.letters	CD.FL	CPS	cd.ps	T_max	T_max_previous_day	T_min	WetHours	WetHours_previous_day	input	filtered	percentage.of.input.passed.filter	denoised	merged	percentage.of.input.merged	non.chimeric	percentage.of.input.non.chimeric
+#q2:types	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	numeric	numeric	numeric	numeric	numeric	categorical	numeric	numeric	numeric	numeric	numeric	numeric	numeric
+73	73	Coscia	Flower	F2-G	Full bloom	D	11.04.2019	7	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	68551	48220	70.34	47460	43053	62.8	31927	46.57
+75	75	Coscia	Flower	F2-G	Full bloom	D	11.04.2019	9	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	69104	51610	74.68	51137	47913	69.33	30102	43.56
+76	76	Coscia	Flower	F2-G	Full bloom	U	11.04.2019	8	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	65079	47835	73.5	47570	45497	69.91	26411	40.58
+77	77	Coscia	Flower	F2-G	Full bloom	D	11.04.2019	11	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	69584	50125	72.04	49784	46932	67.45	28338	40.72
+79	79	Coscia	Flower	F2-G	Full bloom	D	11.04.2019	8	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	73048	51603	70.64	50731	45319	62.04	26342	36.06
+107	107	Coscia	Flower	F2-G	Full bloom	U	11.04.2019	9	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	72932	55036	75.46	54519	51791	71.01	28669	39.31
+109	109	Coscia	Flower	F2-G	Full bloom	U	13.04.2019	7	1	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	69914	51251	73.31	50832	47949	68.58	25229	36.09
+110	110	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	12	1	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	69280	52442	75.7	51925	49232	71.06	28215	40.73
+112	112	Coscia	Flower	F2-G	Full bloom	U	13.04.2019	12	1	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	72539	53488	73.74	53022	50041	68.98	30146	41.56
+113	113	Coscia	Flower	F2-G	Full bloom	D	11.04.2019	12	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	71519	52512	73.42	51957	49201	68.79	30241	42.28
+118	118	Coscia	Flower	F2-G	Full bloom	U	11.04.2019	10	1	Coscia F2-G	11.04.2019 Flower	Coscia Full bloom	11.04.2019 Full bloom	23.2	22.6	7.3	9.17	3.77	73589	54097	73.51	53485	49578	67.37	30614	41.6
+121	121	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	9	1	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	66853	49904	74.65	49284	45676	68.32	28127	42.07
+144	144	Coscia	Flower	F2-G	Full bloom	U	13.04.2019	11	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	73638	53817	73.08	53321	49770	67.59	29701	40.33
+145	145	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	7	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	81168	62077	76.48	61528	57488	70.83	27672	34.09
+148	148	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	10	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	67016	48967	73.07	47881	43534	64.96	23226	34.66
+149	149	Coscia	Flower	F2-G	Full bloom	U	13.04.2019	10	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	71831	53638	74.67	53152	50360	70.11	29011	40.39
+151	151	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	8	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	73493	53262	72.47	52568	48431	65.9	25560	34.78
+159	159	Coscia	Flower	F2-G	Full bloom	D	13.04.2019	11	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	55450	39780	71.74	39300	36236	65.35	24464	44.12
+173	173	Coscia	Flower	F2-G	Full bloom	U	15.04.2019	7	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	53330	40484	75.91	40205	39185	73.48	24375	45.71
+179	179	Coscia	Flower	F2-G	Full bloom	U	15.04.2019	8	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	78780	58449	74.19	57961	54574	69.27	32725	41.54
+180	180	Coscia	Flower	F2-G	Full bloom	D	15.04.2019	7	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	71404	52945	74.15	52255	48619	68.09	27957	39.15
+185	185	Coscia	Flower	F2-G	Full bloom	D	15.04.2019	9	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	76659	55952	72.99	55457	52760	68.82	30095	39.26
+194	194	Coscia	Flower	F2-G	Full bloom	D	15.04.2019	8	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	84930	59970	70.61	58993	53126	62.55	27343	32.19
+201	201	Coscia	Flower	F2-G	Full bloom	U	13.04.2019	9	2	Coscia F2-G	13.04.2019 Flower	Coscia Full bloom	13.04.2019 Full bloom	31.7	27.7	8.3	9.24	9.34	71868	52419	72.94	52068	49124	68.35	24755	34.45
+229	229	Coscia	Flower	F2-G	Full bloom	D	15.04.2019	10	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	57112	41425	72.53	40889	38552	67.5	23302	40.8
+235	235	Coscia	Flower	F2-G	Full bloom	U	15.04.2019	10	2	Coscia F2-G	15.04.2019 Flower	Coscia Full bloom	15.04.2019 Full bloom	19.4	25.5	10.6	3.02	0	71338	52325	73.35	51938	49711	69.68	32029	44.9
+249	249	Coscia	Flower	F2-G	Full bloom	U	21.04.2019	10	3	Coscia F2-G	21.04.2019 Flower	Coscia Full bloom	21.04.2019 Full bloom	20.6	21	9.2	8.33	14.02	76649	55729	72.71	55486	54336	70.89	33701	43.97
+252	252	Coscia	Flower	F2-G	Full bloom	U	21.04.2019	11	3	Coscia F2-G	21.04.2019 Flower	Coscia Full bloom	21.04.2019 Full bloom	20.6	21	9.2	8.33	14.02	73108	53273	72.87	52876	50316	68.82	33700	46.1
+259	259	Coscia	Flower	F2-G	Full bloom	D	21.04.2019	11	3	Coscia F2-G	21.04.2019 Flower	Coscia Full bloom	21.04.2019 Full bloom	20.6	21	9.2	8.33	14.02	67204	50549	75.22	50020	47068	70.04	29580	44.02
+260	260	Coscia	Flower	F2-G	Full bloom	D	21.04.2019	12	3	Coscia F2-G	21.04.2019 Flower	Coscia Full bloom	21.04.2019 Full bloom	20.6	21	9.2	8.33	14.02	73297	55386	75.56	54664	51141	69.77	28807	39.3
+261	261	Coscia	Flower	F2-G	Full bloom	U	21.04.2019	12	3	Coscia F2-G	21.04.2019 Flower	Coscia Full bloom	21.04.2019 Full bloom	20.6	21	9.2	8.33	14.02	73508	55067	74.91	54566	51771	70.43	31929	43.44
+																										
+2	2	Spadona	Flower	E2	White buds	U	24.03.2019	5	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	65775	48544	73.8	48487	41777	63.52	38044	57.84
+3	3	Spadona	Flower	E2	White buds	D	24.03.2019	4	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	72300	51077	70.65	50715	44555	61.63	36327	50.24
+5	5	Spadona	Flower	E2	White buds	U	24.03.2019	2	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	73647	50872	69.08	50488	44415	60.31	37021	50.27
+6	6	Spadona	Flower	E2	White buds	U	24.03.2019	4	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	82156	57898	70.47	57625	50298	61.22	41800	50.88
+9	9	Spadona	Flower	E2	White buds	U	24.03.2019	3	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	72140	51420	71.28	50997	45233	62.7	34685	48.08
+12	12	Spadona	Flower	E2	White buds	D	24.03.2019	1	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	101738	68702	67.53	68079	59993	58.97	47971	47.15
+15	15	Spadona	Flower	E2	White buds	D	24.03.2019	3	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	71271	49820	69.9	49304	43175	60.58	34184	47.96
+16	16	Spadona	Flower	E2	White buds	U	24.03.2019	1	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	77414	52871	68.3	52447	46139	59.6	37445	48.37
+17	17	Spadona	Flower	E2	White buds	U	24.03.2019	6	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	70130	49159	70.1	48828	43127	61.5	33166	47.29
+19	19	Spadona	Flower	E2	White buds	D	24.03.2019	6	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	69389	48307	69.62	48047	42064	60.62	32659	47.07
+24	24	Spadona	Flower	E2	White buds	D	24.03.2019	5	1	Spadona E2	24.03.2019 Flower	Spadona White buds	24.03.2019 White buds	20.6	21	9.2	8.33	14.02	65330	48061	73.57	47875	43413	66.45	29475	45.12
+165	165	Coscia	Flower	E2	White buds	D	15.04.2019	10	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	73215	51978	70.99	51434	46006	62.84	36743	50.19
+183	183	Coscia	Flower	E2	White buds	D	15.04.2019	9	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	72006	51458	71.46	50820	45516	63.21	33520	46.55
+187	187	Coscia	Flower	E2	White buds	D	15.04.2019	11	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	76646	56320	73.48	55810	50181	65.47	36142	47.15
+189	189	Coscia	Flower	E2	White buds	D	15.04.2019	12	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	66107	45159	68.31	44814	39409	59.61	30790	46.58
+202	202	Coscia	Flower	E2	White buds	D	15.04.2019	8	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	70847	49250	69.52	48716	43574	61.5	34318	48.44
+232	232	Coscia	Flower	E2	White buds	D	15.04.2019	7	2	Coscia E2	15.04.2019 Flower	Coscia White buds	15.04.2019 White buds	19.4	25.5	10.6	3.02	0	72821	50148	68.86	49407	44081	60.53	32670	44.86
+PCR1Blank1	PCR1Blank1	Control	Control	Control	Control	Control	Control	0	NA	Control Control	Control Control	Control Control	Control Control	0	0	0	0	0	497	307	61.77	291	291	58.55	291	58.55
+PCR1Blank2	PCR1Blank2	Control	Control	Control	Control	Control	Control	0	NA	Control Control	Control Control	Control Control	Control Control	0	0	0	0	0	247	146	59.11	138	130	52.63	130	52.63
+PCR1Blank3	PCR1Blank3	Control	Control	Control	Control	Control	Control	0	NA	Control Control	Control Control	Control Control	Control Control	0	0	0	0	0	595	385	64.71	383	375	63.03	375	63.03
+PCR1Blank4	PCR1Blank4	Control	Control	Control	Control	Control	Control	0	NA	Control Control	Control Control	Control Control	Control Control	0	0	0	0	0	509	316	62.08	300	246	48.33	203	39.88
+25	25	Spadona	Flower	F	Initial bloom	U	27.03.2019	3	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	68809	50148	72.88	49795	45021	65.43	31663	46.02
+26	26	Spadona	Flower	F	Initial bloom	D	27.03.2019	3	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	68591	49623	72.35	49240	44302	64.59	32825	47.86
+27	27	Spadona	Flower	F	Initial bloom	D	27.03.2019	5	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	73854	52332	70.86	52044	45572	61.71	37360	50.59
+29	29	Spadona	Flower	F	Initial bloom	U	27.03.2019	4	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	76795	55624	72.43	55320	49688	64.7	37364	48.65
+30	30	Spadona	Flower	F	Initial bloom	U	27.03.2019	2	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	64363	46214	71.8	45949	41678	64.75	29804	46.31
+32	32	Spadona	Flower	F	Initial bloom	U	27.03.2019	1	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	71982	50492	70.15	49805	43105	59.88	35264	48.99
+36	36	Spadona	Flower	F	Initial bloom	U	27.03.2019	6	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	75594	52460	69.4	51157	44825	59.3	30735	40.66
+39	39	Spadona	Flower	F	Initial bloom	D	27.03.2019	4	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	73036	52966	72.52	52627	46356	63.47	38747	53.05
+41	41	Spadona	Flower	F	Initial bloom	D	27.03.2019	6	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	68525	49456	72.17	49151	43352	63.26	34783	50.76
+42	42	Spadona	Flower	F	Initial bloom	D	27.03.2019	2	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	68183	48116	70.57	47824	42360	62.13	34769	50.99
+46	46	Spadona	Flower	F	Initial bloom	U	27.03.2019	5	1	Spadona F	27.03.2019 Flower	Spadona Initial bloom	27.03.2019 Initial bloom	19.3	19.3	7	8.86	5.3	75725	51987	68.65	51639	45233	59.73	35871	47.37
+49	49	Spadona	Flower	F	Initial bloom	D	31.03.2019	1	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	70358	47189	67.07	46587	41089	58.4	33501	47.62
+50	50	Spadona	Flower	F	Initial bloom	U	31.03.2019	2	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	69631	46508	66.79	45997	40445	58.08	32946	47.32
+54	54	Spadona	Flower	F	Initial bloom	U	31.03.2019	6	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	70020	49534	70.74	48558	41500	59.27	33243	47.48
+55	55	Spadona	Flower	F	Initial bloom	D	31.03.2019	3	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	58769	41550	70.7	40889	35767	60.86	27312	46.47
+56	56	Spadona	Flower	F	Initial bloom	U	31.03.2019	4	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	104644	75445	72.1	74625	65032	62.15	55332	52.88
+57	57	Spadona	Flower	F	Initial bloom	U	31.03.2019	5	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	74898	53133	70.94	52024	44956	60.02	34567	46.15
+59	59	Spadona	Flower	F	Initial bloom	D	31.03.2019	6	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	65616	45785	69.78	44505	38210	58.23	31056	47.33
+60	60	Spadona	Flower	F	Initial bloom	D	31.03.2019	5	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	86171	60350	70.04	59353	53110	61.63	41898	48.62
+62	62	Spadona	Flower	F	Initial bloom	D	31.03.2019	4	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	76242	53153	69.72	52315	45386	59.53	36550	47.94
+63	63	Spadona	Flower	F	Initial bloom	U	31.03.2019	3	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	73083	53038	72.57	52436	45872	62.77	37853	51.79
+65	65	Spadona	Flower	F	Initial bloom	U	31.03.2019	1	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	74210	50161	67.59	49562	43494	58.61	35245	47.49
+68	68	Spadona	Flower	F	Initial bloom	D	31.03.2019	2	1	Spadona F	31.03.2019 Flower	Spadona Initial bloom	31.03.2019 Initial bloom	13.0	18.1	11.9	17.33	14.32	72313	51572	71.32	50636	43730	60.47	35442	49.01
+82	82	Coscia	Flower	F	Initial bloom	D	11.04.2019	8	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	69181	48646	70.32	47909	42350	61.22	33298	48.13
+83	83	Coscia	Flower	F	Initial bloom	U	11.04.2019	8	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	77644	51152	65.88	50239	44877	57.8	34741	44.74
+84	84	Coscia	Flower	F	Initial bloom	U	11.04.2019	12	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	62066	44247	71.29	43692	39087	62.98	30358	48.91
+88	88	Coscia	Flower	F	Initial bloom	D	11.04.2019	11	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	67058	44994	67.1	44026	38696	57.71	30976	46.19
+95	95	Coscia	Flower	F	Initial bloom	U	11.04.2019	10	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	67386	45486	67.5	44483	39458	58.56	30965	45.95
+96	96	Coscia	Flower	F	Initial bloom	D	11.04.2019	10	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	68172	51076	74.92	50238	45980	67.45	28111	41.24
+98	98	Coscia	Flower	F	Initial bloom	D	11.04.2019	12	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	69747	49909	71.56	49210	44601	63.95	36347	52.11
+102	102	Coscia	Flower	F	Initial bloom	D	11.04.2019	9	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	69613	45755	65.73	44996	39875	57.28	33075	47.51
+103	103	Coscia	Flower	F	Initial bloom	U	11.04.2019	7	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	69330	49285	71.09	48814	45361	65.43	28179	40.64
+106	106	Coscia	Flower	F	Initial bloom	U	11.04.2019	9	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	70320	49587	70.52	48673	43484	61.84	33842	48.13
+114	114	Coscia	Flower	F	Initial bloom	D	11.04.2019	7	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	1526	1042	68.28	1035	1035	67.82	1035	67.82
+117	117	Coscia	Flower	F	Initial bloom	U	11.04.2019	11	1	Coscia F	11.04.2019 Flower	Coscia Initial bloom	11.04.2019 Initial bloom	23.2	22.6	7.3	9.17	3.77	78161	52761	67.5	51866	45739	58.52	38322	49.03
+123	123	Coscia	Flower	F	Initial bloom	D	13.04.2019	12	1	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	61120	43818	71.69	43305	39256	64.23	32968	53.94
+124	124	Coscia	Flower	F	Initial bloom	D	13.04.2019	9	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	67802	44930	66.27	44150	39301	57.96	29303	43.22
+126	126	Coscia	Flower	F	Initial bloom	U	13.04.2019	10	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	63196	42254	66.86	41591	37454	59.27	27252	43.12
+127	127	Coscia	Flower	F	Initial bloom	U	13.04.2019	8	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	74762	50028	66.92	49322	43721	58.48	35226	47.12
+150	150	Coscia	Flower	F	Initial bloom	U	13.04.2019	11	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	63374	43382	68.45	42466	37735	59.54	30964	48.86
+153	153	Coscia	Flower	F	Initial bloom	D	13.04.2019	11	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	66512	47242	71.03	46352	41195	61.94	31118	46.79
+154	154	Coscia	Flower	F	Initial bloom	D	13.04.2019	7	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	65612	43694	66.59	42809	38327	58.41	30804	46.95
+155	155	Coscia	Flower	F	Initial bloom	U	13.04.2019	7	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	49882	34483	69.13	33378	28990	58.12	22499	45.1
+161	161	Coscia	Flower	F	Initial bloom	U	13.04.2019	12	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	56779	39431	69.45	38800	34694	61.1	27932	49.19
+162	162	Coscia	Flower	F	Initial bloom	D	13.04.2019	8	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	61630	43279	70.22	42385	37225	60.4	28050	45.51
+167	167	Coscia	Flower	F	Initial bloom	U	15.04.2019	11	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	73598	52498	71.33	51858	46820	63.62	35085	47.67
+170	170	Coscia	Flower	F	Initial bloom	U	15.04.2019	7	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	53500	39037	72.97	38372	34610	64.69	25316	47.32
+171	171	Coscia	Flower	F	Initial bloom	D	15.04.2019	9	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	65366	45748	69.99	44887	39334	60.18	29928	45.79
+176	176	Coscia	Flower	F	Initial bloom	U	15.04.2019	9	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	74442	50333	67.61	49303	42157	56.63	33119	44.49
+181	181	Coscia	Flower	F	Initial bloom	D	15.04.2019	7	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	92030	64285	69.85	63317	56407	61.29	38894	42.26
+186	186	Coscia	Flower	F	Initial bloom	D	15.04.2019	8	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	70121	49110	70.04	48378	43418	61.92	26827	38.26
+191	191	Coscia	Flower	F	Initial bloom	U	15.04.2019	8	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	78282	56753	72.5	55732	49204	62.85	36949	47.2
+195	195	Coscia	Flower	F	Initial bloom	U	15.04.2019	12	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	81198	58025	71.46	57132	51620	63.57	31790	39.15
+196	196	Coscia	Flower	F	Initial bloom	U	15.04.2019	10	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	76312	53777	70.47	52922	46802	61.33	36484	47.81
+199	199	Coscia	Flower	F	Initial bloom	D	15.04.2019	12	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	67734	48167	71.11	47470	42094	62.15	29148	43.03
+204	204	Coscia	Flower	F	Initial bloom	U	13.04.2019	9	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	53277	35668	66.95	35007	30651	57.53	24762	46.48
+206	206	Coscia	Flower	F	Initial bloom	D	13.04.2019	10	2	Coscia F	13.04.2019 Flower	Coscia Initial bloom	13.04.2019 Initial bloom	31.7	27.7	8.3	9.24	9.34	68364	48628	71.13	48095	44464	65.04	32536	47.59
+208	208	Coscia	Flower	F	Initial bloom	D	15.04.2019	11	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	59398	40084	67.48	39019	33796	56.9	26971	45.41
+230	230	Coscia	Flower	F	Initial bloom	D	15.04.2019	10	2	Coscia F	15.04.2019 Flower	Coscia Initial bloom	15.04.2019 Initial bloom	19.4	25.5	10.6	3.02	0	58770	42192	71.79	41222	36876	62.75	25437	43.28
+143	143	Coscia	Flower	G	Initial petal fall	D	21.04.2019	9	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	61528	45418	73.82	44823	41533	67.5	21638	35.17
+211	211	Coscia	Flower	G	Initial petal fall	U	18.04.2019	7	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	55010	39287	71.42	38712	35357	64.27	19369	35.21
+216	216	Coscia	Flower	G	Initial petal fall	U	18.04.2019	10	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	82369	60430	73.36	60066	57453	69.75	36697	44.55
+217	217	Coscia	Flower	G	Initial petal fall	D	18.04.2019	9	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	66028	48816	73.93	48443	45843	69.43	29694	44.97
+219	219	Coscia	Flower	G	Initial petal fall	D	18.04.2019	8	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	70440	52982	75.22	52587	50171	71.23	27718	39.35
+225	225	Coscia	Flower	G	Initial petal fall	U	18.04.2019	11	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	60637	45228	74.59	44761	42670	70.37	25760	42.48
+236	236	Coscia	Flower	G	Initial petal fall	D	18.04.2019	11	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	70536	51208	72.6	50900	49272	69.85	30358	43.04
+241	241	Coscia	Flower	G	Initial petal fall	D	18.04.2019	7	2	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	66704	49189	73.74	48777	46951	70.39	26849	40.25
+242	242	Coscia	Flower	G	Initial petal fall	D	18.04.2019	10	3	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	70079	50587	72.19	49621	44149	63	29269	41.77
+244	244	Coscia	Flower	G	Initial petal fall	D	18.04.2019	12	3	Coscia G	18.04.2019 Flower	Coscia Initial petal fall	18.04.2019 Initial petal fall	23	21.9	7.3	9.62	7.06	69632	52997	76.11	52712	51491	73.95	32074	46.06
+247	247	Coscia	Flower	G	Initial petal fall	U	21.04.2019	7	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	70417	52619	74.72	52209	48977	69.55	30682	43.57
+250	250	Coscia	Flower	G	Initial petal fall	U	21.04.2019	8	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	81332	60150	73.96	59843	57403	70.58	34108	41.94
+251	251	Coscia	Flower	G	Initial petal fall	D	21.04.2019	8	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	70426	52625	74.72	52134	49146	69.78	30811	43.75
+254	254	Coscia	Flower	G	Initial petal fall	U	21.04.2019	9	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	64740	47025	72.64	46689	44254	68.36	30307	46.81
+264	264	Coscia	Flower	G	Initial petal fall	D	21.04.2019	10	3	Coscia G	21.04.2019 Flower	Coscia Initial petal fall	21.04.2019 Initial petal fall	20.6	21	9.2	8.33	14.02	68725	49841	72.52	49429	47567	69.21	28552	41.55
+11	11	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	6	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	76286	54365	71.26	53655	47348	62.07	38211	50.09
+13	13	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	3	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	126186	90253	71.52	89312	80605	63.88	62772	49.75
+14	14	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	1	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	74845	53072	70.91	52344	46463	62.08	32802	43.83
+18	18	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	4	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	72283	51557	71.33	50921	44448	61.49	35700	49.39
+20	20	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	5	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	71316	50428	70.71	49868	42765	59.97	35792	50.19
+23	23	Spadona	Leaf	Leaf	Leaf	NA	24.03.2019	2	1	Spadona Leaf	24.03.2019 Leaf	Spadona Leaf	24.03.2019 Leaf	20.6	21	9.2	8.33	14.02	74563	53971	72.38	53659	48467	65	33150	44.46
+40	40	Spadona	Leaf	Leaf	Leaf	NA	27.03.2019	1	1	Spadona Leaf	27.03.2019 Leaf	Spadona Leaf	27.03.2019 Leaf	19.3	19.3	7	8.86	5.3	90595	62355	68.83	62118	54702	60.38	46151	50.94
+43	43	Spadona	Leaf	Leaf	Leaf	NA	27.03.2019	6	1	Spadona Leaf	27.03.2019 Leaf	Spadona Leaf	27.03.2019 Leaf	19.3	19.3	7	8.86	5.3	66664	47298	70.95	47066	41308	61.96	33953	50.93
+44	44	Spadona	Leaf	Leaf	Leaf	NA	27.03.2019	5	1	Spadona Leaf	27.03.2019 Leaf	Spadona Leaf	27.03.2019 Leaf	19.3	19.3	7	8.86	5.3	66406	44675	67.28	44477	38978	58.7	32344	48.71
+45	45	Spadona	Leaf	Leaf	Leaf	NA	27.03.2019	2	1	Spadona Leaf	27.03.2019 Leaf	Spadona Leaf	27.03.2019 Leaf	19.3	19.3	7	8.86	5.3	66398	48541	73.11	48271	42558	64.1	36087	54.35
+47	47	Spadona	Leaf	Leaf	Leaf	NA	27.03.2019	4	1	Spadona Leaf	27.03.2019 Leaf	Spadona Leaf	27.03.2019 Leaf	19.3	19.3	7	8.86	5.3	73966	53325	72.09	53012	46030	62.23	39706	53.68
+53	53	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	5	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	67263	47975	71.32	46810	39824	59.21	31272	46.49
+61	61	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	4	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	70688	50259	71.1	49370	43483	61.51	36714	51.94
+64	64	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	6	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	68796	47560	69.13	46042	39172	56.94	32718	47.56
+67	67	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	3	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	67939	46287	68.13	45095	39492	58.13	31309	46.08
+70	70	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	1	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	73950	53111	71.82	52906	45588	61.65	42496	57.47
+71	71	Spadona	Leaf	Leaf	Leaf	NA	31.03.2019	2	1	Spadona Leaf	31.03.2019 Leaf	Spadona Leaf	31.03.2019 Leaf	13.0	18.1	11.9	17.33	14.32	68538	46194	67.4	45067	38728	56.51	32057	46.77
+91	91	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	9	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	78744	55935	71.03	55114	48384	61.44	37352	47.43
+92	92	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	10	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	67222	46899	69.77	46005	40952	60.92	30338	45.13
+93	93	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	11	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	67792	49531	73.06	48956	43917	64.78	34833	51.38
+115	115	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	8	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	66745	46266	69.32	44798	38281	57.35	27256	40.84
+116	116	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	7	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	71297	49780	69.82	48614	42541	59.67	32956	46.22
+119	119	Coscia	Leaf	Leaf	Leaf	NA	11.04.2019	12	1	Coscia Leaf	11.04.2019 Leaf	Coscia Leaf	11.04.2019 Leaf	23.2	22.6	7.3	9.17	3.77	70190	47152	67.18	45944	39376	56.1	30642	43.66
+122	122	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	9	1	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	66200	46512	70.26	45974	40953	61.86	31095	46.97
+129	129	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	12	2	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	75307	53142	70.57	51711	44010	58.44	35681	47.38
+141	141	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	9	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	74838	53940	72.08	53222	47907	64.01	34185	45.68
+158	158	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	11	2	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	66099	45353	68.61	44216	37345	56.5	32226	48.75
+163	163	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	7	2	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	73741	53179	72.12	52180	47527	64.45	28937	39.24
+164	164	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	8	2	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	67879	48858	71.98	47292	40382	59.49	26846	39.55
+169	169	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	7	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	68398	49769	72.76	48820	42428	62.03	31646	46.27
+172	172	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	9	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	73020	50363	68.97	49565	44183	60.51	34352	47.04
+178	178	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	10	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	75222	52766	70.15	51963	44625	59.32	34510	45.88
+182	182	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	8	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	68621	49975	72.83	49147	45134	65.77	29029	42.3
+203	203	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	11	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	68883	52315	75.95	51801	48177	69.94	25736	37.36
+207	207	Coscia	Leaf	Leaf	Leaf	NA	13.04.2019	10	2	Coscia Leaf	13.04.2019 Leaf	Coscia Leaf	13.04.2019 Leaf	31.7	27.7	8.3	9.24	9.34	66463	47244	71.08	46415	41821	62.92	27751	41.75
+215	215	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	7	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	80481	60539	75.22	59801	52780	65.58	37814	46.99
+220	220	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	8	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	69680	51616	74.08	51045	46850	67.24	31374	45.03
+223	223	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	12	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	57692	40652	70.46	39925	35357	61.29	24387	42.27
+227	227	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	11	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	73529	53676	73	53221	49835	67.78	34667	47.15
+228	228	Coscia	Leaf	Leaf	Leaf	NA	15.04.2019	12	2	Coscia Leaf	15.04.2019 Leaf	Coscia Leaf	15.04.2019 Leaf	19.4	25.5	10.6	3.02	0	69383	48977	70.59	48448	41239	59.44	34601	49.87
+237	237	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	9	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	76603	54589	71.26	54268	50131	65.44	33852	44.19
+240	240	Coscia	Leaf	Leaf	Leaf	NA	18.04.2019	10	2	Coscia Leaf	18.04.2019 Leaf	Coscia Leaf	18.04.2019 Leaf	23	21.9	7.3	9.62	7.06	64121	45208	70.5	44537	40180	62.66	28916	45.1
+246	246	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	7	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	67861	51297	75.59	50741	47096	69.4	33813	49.83
+255	255	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	8	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	72717	53165	73.11	52860	50499	69.45	35538	48.87
+258	258	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	11	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	269	175	65.06	156	155	57.62	152	56.51
+263	263	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	10	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	67302	50563	75.13	50380	48624	72.25	35652	52.97
+267	267	Coscia	Leaf	Leaf	Leaf	NA	21.04.2019	12	3	Coscia Leaf	21.04.2019 Leaf	Coscia Leaf	21.04.2019 Leaf	20.6	21	9.2	8.33	14.02	78974	57090	72.29	56617	52882	66.96	35744	45.26
+132	132	Coscia	Flower	H	Complete petal fall	U	21.04.2019	9	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	75047	55063	73.37	54983	54393	72.48	37429	49.87
+136	136	Coscia	Flower	H	Complete petal fall	D	21.04.2019	9	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	74763	55461	74.18	55401	55061	73.65	38350	51.3
+166	166	Coscia	Flower	H	Complete petal fall	D	15.04.2019	7	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	81223	59391	73.12	58493	54051	66.55	21388	26.33
+168	168	Coscia	Flower	H	Complete petal fall	U	15.04.2019	11	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	16388	12140	74.08	11908	10975	66.97	4962	30.28
+175	175	Coscia	Flower	H	Complete petal fall	U	15.04.2019	7	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	77580	57231	73.77	56599	53152	68.51	23243	29.96
+177	177	Coscia	Flower	H	Complete petal fall	U	15.04.2019	10	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	82517	62141	75.31	61552	57715	69.94	21576	26.15
+188	188	Coscia	Flower	H	Complete petal fall	U	15.04.2019	12	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	57861	42843	74.04	42441	39642	68.51	19161	33.12
+190	190	Coscia	Flower	H	Complete petal fall	U	15.04.2019	8	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	73030	54667	74.86	53927	48521	66.44	17284	23.67
+197	197	Coscia	Flower	H	Complete petal fall	D	15.04.2019	11	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	118985	88291	74.2	87795	83724	70.37	35794	30.08
+205	205	Coscia	Flower	H	Complete petal fall	D	15.04.2019	8	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	74205	55310	74.54	54594	49843	67.17	18865	25.42
+212	212	Coscia	Flower	H	Complete petal fall	D	18.04.2019	10	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	69977	51758	73.96	51324	46974	67.13	25523	36.47
+213	213	Coscia	Flower	H	Complete petal fall	U	18.04.2019	8	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	67960	50535	74.36	50217	46957	69.1	26070	38.36
+214	214	Coscia	Flower	H	Complete petal fall	D	18.04.2019	11	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	60981	42847	70.26	41911	37223	61.04	19833	32.52
+218	218	Coscia	Flower	H	Complete petal fall	D	18.04.2019	7	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	59672	44580	74.71	44144	41312	69.23	20354	34.11
+221	221	Coscia	Flower	H	Complete petal fall	D	18.04.2019	8	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	75666	56818	75.09	56113	51135	67.58	15105	19.96
+222	222	Coscia	Flower	H	Complete petal fall	U	18.04.2019	12	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	87617	65495	74.75	65248	61358	70.03	37094	42.34
+226	226	Coscia	Flower	H	Complete petal fall	D	18.04.2019	12	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	77568	57470	74.09	57222	55200	71.16	33844	43.63
+231	231	Coscia	Flower	H	Complete petal fall	D	15.04.2019	12	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	76155	57858	75.97	57467	54755	71.9	24190	31.76
+234	234	Coscia	Flower	H	Complete petal fall	U	15.04.2019	9	2	Coscia H	15.04.2019 Flower	Coscia Complete petal fall	15.04.2019 Complete petal fall	19.4	25.5	10.6	3.02	0	73095	54828	75.01	54542	52099	71.28	25607	35.03
+239	239	Coscia	Flower	H	Complete petal fall	U	18.04.2019	7	2	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	60787	44516	73.23	43918	40497	66.62	20284	33.37
+243	243	Coscia	Flower	H	Complete petal fall	U	18.04.2019	9	3	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	75483	57062	75.6	56804	54026	71.57	32387	42.91
+245	245	Coscia	Flower	H	Complete petal fall	U	18.04.2019	10	3	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	71941	53406	74.24	52938	49244	68.45	28845	40.1
+248	248	Coscia	Flower	H	Complete petal fall	D	21.04.2019	7	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	85937	64682	75.27	64512	63616	74.03	40879	47.57
+256	256	Coscia	Flower	H	Complete petal fall	U	18.04.2019	11	3	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	80009	60351	75.43	60089	57745	72.17	36255	45.31
+257	257	Coscia	Flower	H	Complete petal fall	D	18.04.2019	9	3	Coscia H	18.04.2019 Flower	Coscia Complete petal fall	18.04.2019 Complete petal fall	23	21.9	7.3	9.62	7.06	68818	51275	74.51	50929	48887	71.04	30130	43.78
+262	262	Coscia	Flower	H	Complete petal fall	U	21.04.2019	11	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	66276	49574	74.8	49289	47581	71.79	27324	41.23
+265	265	Coscia	Flower	H	Complete petal fall	D	21.04.2019	10	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	81261	61719	75.95	61680	61523	75.71	42713	52.56
+266	266	Coscia	Flower	H	Complete petal fall	D	21.04.2019	12	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	71973	53378	74.16	53228	52444	72.87	35205	48.91
+268	268	Coscia	Flower	H	Complete petal fall	U	21.04.2019	12	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	71660	53498	74.66	53441	53133	74.15	37168	51.87
+269	269	Coscia	Flower	H	Complete petal fall	U	21.04.2019	10	3	Coscia H	21.04.2019 Flower	Coscia Complete petal fall	21.04.2019 Complete petal fall	20.6	21	9.2	8.33	14.02	73344	55694	75.94	55607	55250	75.33	37221	50.75
+72	72	Coscia	Flower	E2	White buds	D	11.04.2019	12	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	74732	48949	65.5	48083	43341	58	34683	46.41
+74	74	Coscia	Flower	E2	White buds	D	11.04.2019	10	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	78198	52215	66.77	51854	47065	60.19	40056	51.22
+78	78	Coscia	Flower	E2	White buds	D	11.04.2019	8	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	65537	45227	69.01	44722	39991	61.02	33268	50.76
+81	81	Coscia	Flower	E2	White buds	D	11.04.2019	9	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	70687	49088	69.44	48257	42205	59.71	31626	44.74
+86	86	Coscia	Flower	E2	White buds	U	11.04.2019	10	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	70822	47946	67.7	47529	42168	59.54	33384	47.14
+89	89	Coscia	Flower	E2	White buds	D	11.04.2019	11	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	65229	44653	68.46	44189	39590	60.69	32435	49.72
+90	90	Coscia	Flower	E2	White buds	U	11.04.2019	8	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	73147	50119	68.52	49202	43220	59.09	34362	46.98
+94	94	Coscia	Flower	E2	White buds	U	11.04.2019	12	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	75658	53719	71	53006	46665	61.68	36032	47.62
+99	99	Coscia	Flower	E2	White buds	U	11.04.2019	11	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	69586	49386	70.97	48911	43140	62	35272	50.69
+101	101	Coscia	Flower	E2	White buds	U	11.04.2019	7	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	82717	56557	68.37	55987	48770	58.96	39336	47.55
+104	104	Coscia	Flower	E2	White buds	D	11.04.2019	7	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	76829	53508	69.65	52965	46979	61.15	38050	49.53
+105	105	Coscia	Flower	E2	White buds	U	11.04.2019	9	1	Coscia E2	11.04.2019 Flower	Coscia White buds	11.04.2019 White buds	23.2	22.6	7.3	9.17	3.77	75164	50860	67.67	50224	44228	58.84	35115	46.72
+111	111	Coscia	Flower	E2	White buds	D	13.04.2019	11	1	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	72796	51737	71.07	51139	45532	62.55	35559	48.85
+125	125	Coscia	Flower	E2	White buds	U	13.04.2019	9	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	68820	45882	66.67	45373	39599	57.54	33608	48.83
+128	128	Coscia	Flower	E2	White buds	U	13.04.2019	10	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	69523	48302	69.48	47662	41331	59.45	32816	47.2
+130	130	Coscia	Flower	E2	White buds	U	13.04.2019	8	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	79657	54602	68.55	53864	47617	59.78	35907	45.08
+131	131	Coscia	Flower	E2	White buds	D	13.04.2019	9	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	95805	67578	70.54	67041	61291	63.97	42793	44.67
+146	146	Coscia	Flower	E2	White buds	D	13.04.2019	7	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	57003	41096	72.09	40734	36256	63.6	26125	45.83
+147	147	Coscia	Flower	E2	White buds	U	13.04.2019	11	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	55223	38903	70.45	38360	34098	61.75	25705	46.55
+152	152	Coscia	Flower	E2	White buds	U	13.04.2019	7	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	63980	43453	67.92	42716	37510	58.63	29342	45.86
+156	156	Coscia	Flower	E2	White buds	U	13.04.2019	12	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	55314	37266	67.37	36733	32311	58.41	25344	45.82
+160	160	Coscia	Flower	E2	White buds	D	13.04.2019	12	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	69051	49282	71.37	48617	44518	64.47	30284	43.86
+198	198	Coscia	Flower	E2	White buds	D	13.04.2019	10	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	86867	59088	68.02	58696	51601	59.4	40858	47.04
+200	200	Coscia	Flower	E2	White buds	D	13.04.2019	8	2	Coscia E2	13.04.2019 Flower	Coscia White buds	13.04.2019 White buds	31.7	27.7	8.3	9.24	9.34	72291	48677	67.33	48185	43120	59.65	34153	47.24
