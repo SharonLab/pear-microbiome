@@ -106,7 +106,7 @@ pear_ordiplot <- function(ordi_points, explainedvar1, explainedvar2, metadataCol
       scale_fill_manual(breaks = positions)
   } else {
     p <- ggplot(ordi_points, aes(x = V1, y = V2, color = metadataCol, shape = shapeBy)) +
-      geom_point(size = 2) +
+      geom_point(size = 3) +
       xlab(paste0(explainedvar1, "%")) +
       ylab(paste0(explainedvar2, "%")) +
       labs(color = metadataColumn, title = gsub(metadataColumn, ".", " ")) +
@@ -130,40 +130,70 @@ get_taxrank <- function(ps) {
   # The rank can be inferred from the last non-NA column in the taxonomy table
   last_non_na_column <- as.numeric(min(which(is.na(tax_table[1, ]))))
   # Get the rank name
+  
   tax_rank <- colnames(tax_table)[last_non_na_column - 1]
   return(tax_rank)
 }
 
-make_data_bars1 <- function(your.ps, threshold, grouping_var) {
+make_data_bars1 <- function(your.ps, threshold, grouping_var, RA = TRUE) {
   ## this function prepares the dataframe for the taxonomic bar plot
+  
   if (missing(grouping_var)) {
-    dataBars1 <- your.ps %>%
-      transform_sample_counts(function(x) {
-        x / sum(x)
-      }) %>% # Transform to rel. abundance
-      psmelt()
+    if (RA == TRUE) {
+      print(paste0("RA true with no grouping  "))
+     temp.ps <- your.ps %>%
+        transform_sample_counts(function(x) {
+          x / sum(x)
+        })  # Transform to rel. abundance
+      dataBars1  <- psmelt(temp.ps)
+    } else { #RA false no grouping
+      print(paste0("RA false with no grouping  "))
+      dataBars1 <- your.ps %>%
+        psmelt()
+      temp.ps <- your.ps
+    }
+   
   } else {
-    dataBars1 <- your.ps %>%
-      merge_samples(group = grouping_var, fun = mean) %>%
-      transform_sample_counts(function(x) {
-        x / sum(x)
-      }) %>% # Transform to rel. abundance
-      psmelt()
+    if (RA == FALSE) { # RA false with grouping
+      print(paste0("RA false with grouping by ", grouping_var))
+      temp.ps <- your.ps %>%
+        speedyseq::merge_samples2(group = grouping_var, fun_otu = mean)
+      sample_data(temp.ps)$Sample <- rownames(sample_data(temp.ps))  # fix a phyloseq bug. it works bad also with other packages
+      dataBars1 <-  temp.ps %>%
+        psmelt()
+    } else { # RA true with grouping
+      print(paste0("RA true with grouping by ", grouping_var))
+      temp.ps <- your.ps %>%
+        transform_sample_counts(function(x) {
+          x / sum(x)
+        }) %>%
+        speedyseq::merge_samples2(group = grouping_var, fun_otu = mean)
+      sample_data(temp.ps)$Sample <- rownames(sample_data(temp.ps)) # fix a phyloseq bug. it works bad also with other packages
+      dataBars1 <- temp.ps %>%
+        psmelt()
+    }
+   
   }
-  taxrank <- get_taxrank(your.ps)
-  ps.melted <- your.ps %>% psmelt() ## here the abundance is count data not RA
-  sum_of_seqs <- sum(ps.melted$Abundance)
-  ps.melted.grouped <- aggregate(Abundance ~ get(taxrank), ps.melted, sum)
-  ps.melted.grouped$ave <- ps.melted.grouped$Abundance / sum_of_seqs
-
-  if (missing(threshold)) {
-    return(dataBars1)
-  } else {
-    species.list <- ps.melted.grouped[ps.melted.grouped$ave > threshold, ]$`get(taxrank)`
-    `%notin%` <- Negate(`%in%`)
-    dataBars1[dataBars1[[taxrank]] %notin% species.list, ][[taxrank]] <- paste0(taxrank, " < ", threshold)
-    return(dataBars1)
+  taxrank <- try(get_taxrank(your.ps))
+  if(is.na(taxrank)) {
+    taxrank <- "Species"
   }
+  
+  if (!missing(threshold)) {
+    
+    
+    ps.melted <- your.ps %>% psmelt() ## here the abundance is count data not RA
+    sum_of_seqs <- sum(ps.melted$Abundance)
+    ps.melted.grouped <- aggregate(Abundance ~ get(taxrank), ps.melted, sum)
+    ps.melted.grouped$ave <- ps.melted.grouped$Abundance / sum_of_seqs
+    
+      species.list <- ps.melted.grouped[ps.melted.grouped$ave > threshold, ]$`get(taxrank)`
+      `%notin%` <- Negate(`%in%`)
+      dataBars1[dataBars1[[taxrank]] %notin% species.list, ][[taxrank]] <- paste0(taxrank, " < ", threshold)
+    
+ 
+  } 
+  return(dataBars1) 
 }
 
 
@@ -212,22 +242,27 @@ basic_bar_plot <- function(dataBars, taxrank = NULL) {
   number_of_phyla <- length(unique(dataBars[[taxrank]]))
   if (taxrank == "Genus") {
     print("TRUE")
+    
     all_taxa <- unique(dataBars[[taxrank]])
-    all_taxa_except_Erwinia <- all_taxa[all_taxa != "Erwinia"]
+    all_taxa_except_Erwinia <- all_taxa[all_taxa != "Erwinia" & all_taxa != missing_name]
 
     getPalette <- colorRampPalette(brewer.pal(9, "Set1"))
-
+    
+    
     my_palette <- setNames(getPalette(length(all_taxa_except_Erwinia)), all_taxa_except_Erwinia)
-    my_palette["Buchnera"] <- "green4"
+    my_palette["Pseudomonas"] <- "cornflowerblue"
     my_palette["Erwinia"] <- "red"
+    my_palette[missing_name] <- "grey70"
 
-    dataBars[[taxrank]] <- factor(dataBars[[taxrank]], levels = c(rev(all_taxa_except_Erwinia), "Erwinia"))
-    p2 <- ggplot(dataBars, aes(x = Sample, y = Abundance, fill = get(taxrank))) +
+    dataBars[[taxrank]] <- factor(dataBars[[taxrank]], levels = c(missing_name, rev(all_taxa_except_Erwinia), "Erwinia"))
+    
+    p2 <- ggplot(dataBars, aes(x = Sample, y = Abundance, fill =  get(taxrank))) +
       geom_bar(stat = "identity") +
       scale_fill_manual(name = taxrank, values = my_palette) +
       theme_minimal() +
       theme(legend.position = "right", axis.text.x = element_text(angle = 45, hjust = 1, size = 12))
   } else {
+    print("else")
     getPalette <- colorRampPalette(brewer.pal(9, "Set1"))
     p2 <- ggplot(dataBars, aes(x = Sample, y = Abundance, fill = forcats::fct_reorder(get(taxrank), Abundance))) +
       geom_bar(stat = "identity") +

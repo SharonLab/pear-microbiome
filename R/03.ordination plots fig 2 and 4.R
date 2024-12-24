@@ -15,7 +15,7 @@ library(ggsignif)
 source("R/02.general_definitions.R")
 source("R/02.helper_functions.R")
 
-setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
+setwd("/Users/aiaoz/qiime2.aia.filter/R_pears")
 
 ## load data
 ps <- readRDS("Data/phyloseq_no_buchnera")
@@ -33,12 +33,11 @@ sample_data(ps.rarefied) <- metadata
 
 
 
-# Coscia flowers height and location: figure 2 in the manuscript, and pcoas for supplementary ---------------------------------------------
-# this figure contains four plots:
-# A. PCoA colored by the flower's height - moved to supp
-# B. PcoA colored by the location in the orchard - moved to supp
-# C. Alpha diversity comparison of the height.
-# D alpha diversity of the location in the orchard. 
+# Coscia flowers height and location: Ordination - not in the manuscript ---------------------------------------------
+
+# . PCoA colored by the flower's height - not in the manuscript
+# . PcoA colored by the location in the orchard - not in the manuscript
+
 
 ps.coscia.flowers <- readRDS("Data/phyloseq_costia_flowers_rarefied")
 
@@ -81,6 +80,9 @@ dev.off()
 ## make a CCA with the location in the orchard, location on the tree, ps and cd
 meta_cosc$ps <- meta_cosc$Phenological.stage
 meta_cosc$cd <- meta_cosc$Short.collection.date
+# Ensure the 'ps' variable has the correct factor levels (desired legend order)
+meta_cosc$ps <- factor(meta_cosc$ps, levels = c("White buds", "Initial bloom", "Full bloom", "Initial petal fall", "Complete petal fall", "Leaf"))
+
 
 
 sample_data(ps.coscia.flowers) <- meta_cosc
@@ -96,16 +98,19 @@ ord_rda <- ordinate(ps.coscia.flowers, method = "CAP", distance = "bray", formul
 rda_plot <- plot_ordination(ps.coscia.flowers, ordination = ord_rda, color = "ps") +
   scale_color_manual(values=color_values_ps) + # the color values are defined in 02.general_definitions.R
   #scale_fill_manual(values=color_values_ps_mod, labels = c("White buds", "Initial bloom", "Full bloom", "Initial petal fall", "Complete petal fall")) +
-  theme_minimal() + geom_point(size = 3, alpha = 0.5 )
+  geom_point(size = 3, alpha = 0.5 )
 arrowmat <- vegan::scores(ord_rda, display = "bp")
   arrow_df <- data.frame(labels = rownames(arrowmat), arrowmat)
+  # Modify the labels to include a new line between category and group
+  arrow_df$labels <- gsub("(ps|cd|Height|Group)(.*)", "\\1\n\\2", arrow_df$labels)
+  
+  
 arrow_map <- aes(xend = CAP1*1.5, 
                  yend = CAP2*1.5, 
                  x = 0, y = 0, 
                  shape = NULL, 
-                 color = NULL, 
-                 label = labels) 
-label_map <- aes(x = 2 * CAP1, y = 1.9 * CAP2, 
+                 color = NULL) 
+label_map <- aes(x = 1.5 * CAP1, y = 1.5 * CAP2, 
                  shape = NULL, 
                  color = NULL,
                  label = labels)  
@@ -115,17 +120,35 @@ arrowhead = arrow(length = unit(0.02, "npc"))
 rda_plot1 <- rda_plot + geom_segment(mapping = arrow_map, size = .7, 
                                      data = arrow_df, color = "black", 
                                      arrow = arrowhead) + 
- # geom_text(mapping = label_map, size = 4,  fontface = "bold", 
-   #         data = arrow_df, 
-  #          show.legend = TRUE) + 
-  ggtitle("CAP_Plot")  + theme_bw() 
+
+  ggrepel::geom_label_repel(mapping = label_map, size = 4, 
+                            data = arrow_df, 
+                            label.padding = unit(0.25,"lines"),
+                            label.r = unit(0.5, "lines"),
+                            box.padding = unit(0.5, "lines"), 
+                            point.padding = unit(0.3, "lines"),
+                            nudge_x = 0.05, nudge_y = 0,
+                            segment.color = 'grey50',
+                            show.legend = FALSE,
+                            fill = alpha(c("white"), 0.6),  # Set background transparency
+                            label.size = 0.3) +  # Remove label border) +
+  labs(color = "ps: phenological stage")
+  #ggtitle("")  + theme_bw() 
 plot(rda_plot1)
 
-png("images/Constrained ordination with arrows high vs low.png", height = 3000, width = 3500, res = 400)
+png("images/Constrained ordination with arrows high vs low.png", height = 3000, width = 5500, res = 500)
+print(rda_plot1)
+dev.off()
+
+png("images/Constrained ordination with arrows high vs low no boxes.png", height = 3000, width = 5500, res = 500)
 print(rda_plot1)
 dev.off()
 
 
+# Figure 2 initial stages alpha diversities -------------------------------
+ps.coscia <- readRDS("data/phyloseq_coscia_rarefied")
+ps.coscia.flowers <- ps.coscia %>%
+  subset_samples(Flower.or.leaf == "Flower")
 # make a dataframe with the alpha diversity measures and melt it by the clustering/questioning variable
 # and keep just one relevant alpha diversity measurement
 variables_for_boxplots <- c("Group", "Height")
@@ -137,19 +160,36 @@ label_list <- list(
   "Group" = c("C", "D"),
   Height = c("E", "F")
 )
-# RDA by height and location in the orchard
 
-for (Grouping in variables_for_boxplots) {
-  alpha_diversity_melt_coscia_flowers_s <- make_alpha_melted_df(ps.coscia.flowers, Grouping, index = "Shannon")
-  alpha_diversity_melt_coscia_flowers_c <- make_alpha_melted_df(ps.coscia.flowers, Grouping, index = "Chao1")
-  # combine the two plots. it is done not with facet_wrap so that we cna use two ylabs and remove the title
-  # plot_alpha_boxplot is in the helper function files
-  p1 <- plot_alpha_boxplot(alpha_diversity_melt_coscia_flowers_s, colorList[[Grouping]]) 
-  p2 <- plot_alpha_boxplot(alpha_diversity_melt_coscia_flowers_c, colorList[[Grouping]])
-  assign(paste0("p_", Grouping), ggpubr::ggarrange(p2, p1, ncol = 2, labels = label_list[[Grouping]]), envir = .GlobalEnv)
-}
-print(p_Group)
-print(p_Height)
+
+
+  alpha_diversity_melt_group_both <- make_alpha_melted_df(ps.coscia.flowers, "Group", index = c("Shannon", "Chao1"))
+  alpha_diversity_melt_height_both <- make_alpha_melted_df(ps.coscia.flowers, "Height", index = c("Shannon", "Chao1"))
+   p_alpha_location <-  ggplot(alpha_diversity_melt_group_both, aes(x = Group, y = value, fill = Group)) +
+    geom_boxplot() +
+    theme_bw() +
+    geom_jitter(alpha = 0.5, size = 1) +
+    facet_wrap(~measure, scales = "free_y") +
+    scale_x_discrete(limits = c("Group 1", "Group 2")) +
+    stat_compare_means(method = "wilcox.test", label = "p.signif", size = 4) + 
+    theme(axis.title.x = element_blank(), axis.text.x = element_text(size = 10),
+          plot.title = element_text(size = 10), legend.position = "none") +
+      scale_y_continuous(expand = expansion(mult = c(0.05, 0.15)))  +
+     ggtitle("Location in the orchard")
+  
+  
+  p_alpha_height <- ggplot(alpha_diversity_melt_height_both, aes(x = Group, y = value, fill = Group)) +
+    geom_boxplot() +
+    theme_bw() +
+    geom_jitter(alpha = 0.5, size = 1) +
+    facet_wrap(~measure, scales = "free_y") +
+    scale_x_discrete(limits = c("Low", "High")) +
+    stat_compare_means(comparisons = list(c("High", "Low")) ,  method = "wilcox.test", label = "p.signif", size = 4) + 
+    theme(axis.title.x = element_blank(), axis.text.x = element_text(size = 10),
+          plot.title = element_text(size = 10), legend.position = "none") +
+    scale_y_continuous(expand = expansion(mult = c(0.05, 0.15))) +
+    ggtitle("Height")
+  
 
 alpha_location_height <- ggpubr::ggarrange(p_Group, NULL, p_Height,
   nrow = 1,
@@ -160,6 +200,20 @@ png(file = "images/Location on tree and in orchard.png", height = 3000, width = 
 ggpubr::ggarrange(Location_pcoa, NULL, alpha_location_height,
   nrow = 3,
   heights = c(10, 1, 10)
+)
+dev.off()
+
+png(file = "images/Location on tree and in orchard with jitter.png", height = 3000, width = 3500, res = 350)
+ggpubr::ggarrange(Location_pcoa, NULL, alpha_location_height,
+                  nrow = 3,
+                  heights = c(10, 1, 10)
+)
+dev.off()
+
+png(file = "images/Location on tree and in orchard with jitter.png", height = 3000, width = 3500, res = 350)
+ggpubr::ggarrange(Location_pcoa, NULL, alpha_location_height,
+                  nrow = 3,
+                  heights = c(10, 1, 10)
 )
 dev.off()
 

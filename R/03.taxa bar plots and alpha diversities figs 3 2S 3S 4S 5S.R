@@ -6,7 +6,6 @@
 # figure S3: relative abundances of phyla
 # tables S4 and S5
 
-setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
 library(phyloseq)
 library(dplyr)
 library(tidyr)
@@ -16,9 +15,10 @@ library(RColorBrewer)
 library(ggplot2)
 library(ggpubr)
 library(reshape2)
-# library(speedyseq)
+library(patchwork)
 source("R/02.helper_functions.R")
 source("R/02.general_definitions.R")
+source("R/BarPlots.R")
 ps <- readRDS("Data/phyloseq_no_buchnera")
 ps
 metadata <- data.frame(sample_data(ps))
@@ -33,42 +33,94 @@ ps.family <- tax_glom(ps, taxrank = "Family")
 ps.order <- tax_glom(ps, taxrank = "Order")
 
 
-# Figure S2 bar plot ----------------------------------------------------
+# Figure S2 ----------------------------------------------------
 
-ps.current <- ps.genera # for Fig S2
-ps.current <- ps.phyla  # for figure S3
+
+ps.current <- ps.phyla  # for figure S2
 metadata.current <- sample_data(ps.current)
 metadata.current$cd.ps <- paste0(metadata.current$Collection.date, " ", metadata.current$Phenological.stage)
 sample_data(ps.current) <- metadata.current
 
-db.current1 <- make_data_bars1(ps.current, 0.005, "cd.ps") # for genus figure S2
 # for phyla use the following:
-db.current1 <- make_data_bars1(ps.current, 0.00005, "cd.ps") # for phyla figure S3
+db.current1 <- make_data_bars1(ps.current, 0.00005, "cd.ps") # for phyla figure S2
 # split the sample into phenological stage and collection date
-db.current <- separate(db.current1, Sample, into = c("Collection.date", "Phenological.stage"), sep = "^\\S*\\K\\s+")
-
-
+db.current <- separate(db.current1, Sample, into = c("Collection.date", "Phenological.stage"), sep = "^\\S*\\K\\s+", remove = FALSE)
+#db.current <- db.current1
+db.current <- db.current %>% filter(!is.na(Abundance))
 order.ps <- c("White buds", "Initial bloom", "Full bloom", "Initial petal fall", "Complete petal fall", "Leaf")
-positions <- c("24.03.2019", "27.03.2019", "31.03.2019", "11.04.2019", "13.04.2019", "15.04.2019", "18.04.2019", "21.04.2019")
+positions <- c("24.03", "27.03", "31.03", "11.04", "13.04", "15.04", "18.04", "21.04")
 
-tbpf <-
-  taxa_bar_plot(db.current, "Collection.date")
+# Adjusted plot
+number_of_phyla <- length(unique(db.current$Phylum))
+
+tbpf <- ggplot(db.current, aes(x = Short.collection.date, y = Abundance, fill = forcats::fct_reorder(Phylum, Abundance))) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(name = taxrank, values = rev(getPalette(number_of_phyla))) +
+  theme_minimal() +
+  theme(legend.position = "right", axis.text.x = element_text(angle = 45, hjust = 1, size = 12)) + 
+  facet_wrap(~ factor(Phenological.stage, levels = order.ps), nrow = 6, ncol = 1) 
 tbpf
-# tbpf + geom_point(data = data_bars.ra1.e, aes(x = CD, y = total_ra))
-p1 <-
-  tbpf + # theme(legend.position = "None") +
+# Additional adjustments
+p1 <- tbpf +
   scale_x_discrete(limits = positions) +
-  facet_wrap(~ factor(Phenological.stage, levels = order.ps), nrow = 6, ncol = 1) +
-  labs(x = "\nCollection date", title = "Taxonomy bar plots") +
+  labs(x = "\n\nCollection date", title = "Phylum bar plots", y = "Relative abundance\n") +
   geom_vline(xintercept = 3.5, color = "mediumorchid", linewidth = 1.5)
 
-png(filename = "images/alpha and barplot phyla S3.png", height = 4500, width = 2500, res = 400)
+p1
+
+png(filename = "images/Fig S2 barplot phyla.png", height = 4000, width = 3000, res = 450)
 print(p1)
 dev.off()
 
 
+# figure S4 bar plot ------------------------------------------------------
 
-# Figure S2 alpha diversity  ---------------------------------------------------------
+ps.current <- ps.genera # for Fig S4
+metadata.current <- sample_data(ps.current)
+metadata.current$cd.ps <- paste0(metadata.current$Collection.date, " ", metadata.current$Phenological.stage)
+sample_data(ps.current) <- metadata.current
+
+db.current1 <- make_data_bars1(ps.current, 0.005, "cd.ps") # for genus figure S4
+db.current <- separate(db.current1, Sample, into = c("Collection.date", "Phenological.stage"), sep = "^\\S*\\K\\s+", remove = FALSE)
+
+db.current <- db.current %>% filter(!is.na(Abundance))
+order.ps <- c("White buds", "Initial bloom", "Full bloom", "Initial petal fall", "Complete petal fall", "Leaf")
+positions <- c("24.03", "27.03", "31.03", "11.04", "13.04", "15.04", "18.04", "21.04")
+
+# Adjusted plot
+number_of_phyla <- length(unique(db.current$Genus))
+missing_name <- "Genus < 0.005"
+all_taxa <- unique(db.current$Genus)
+all_taxa_except_Erwinia <- all_taxa[all_taxa != "Erwinia" & all_taxa != missing_name]
+
+getPalette <- colorRampPalette(brewer.pal(9, "Set1"))
+
+
+my_palette <- setNames(getPalette(length(all_taxa_except_Erwinia)), all_taxa_except_Erwinia)
+my_palette["Pseudomonas"] <- "cornflowerblue"
+my_palette["Erwinia"] <- "red"
+my_palette[missing_name] <- "grey70"
+
+db.current$Genus <- factor(db.current$Genus, levels = c(missing_name, sort(all_taxa_except_Erwinia), "Erwinia"))
+
+tbpf <- ggplot(db.current, aes(x = Short.collection.date, y = Abundance, fill = Genus)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(name = "Genus", values = rev(getPalette(number_of_phyla))) +
+  theme_minimal() +
+  theme(legend.position = "right", axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = -0.1))+ 
+  facet_wrap(~ factor(Phenological.stage, levels = order.ps), nrow = 6, ncol = 1) 
+tbpf
+# Additional adjustments
+p1 <- tbpf +
+  scale_x_discrete(limits = positions) +
+  labs(x = "\n\nCollection date", title = "Genera bar plots", y = "Relative abundance\n", fill = "Genus") +
+  geom_vline(xintercept = 3.5, color = "mediumorchid", linewidth = 1.5) +
+  guides(fill = guide_legend(ncol = 1))
+
+p1
+
+
+# Figure S4 alpha diversity  ---------------------------------------------------------
 
 ps.rarefied <- readRDS("Data/phyloseq_all_data_rarefied_noB")
 metadata.rarefied <- data.frame(sample_data(ps.rarefied), stringsAsFactors = FALSE)
@@ -76,8 +128,8 @@ metadata.rarefied$Shannon <- estimate_richness(ps.rarefied, measures = "Shannon"
 sample_data(ps.rarefied) <- metadata.rarefied
 
 
-rects <- data.frame(xstart = c("24.03.2019", "11.04.2019"), xend = c("24.03.2019", "11.04.2019"), colss = c("Spadona", "Coscia"))
-p2 <- ggplot(metadata.rarefied, aes(x = Collection.date, y = Shannon)) +
+rects <- data.frame(xstart = c("24.03", "11.04"), xend = c("24.03", "11.04"), colss = c("Spadona", "Coscia"))
+p2 <- ggplot(metadata.rarefied, aes(x = Short.collection.date, y = Shannon)) +
   geom_boxplot() +
   facet_wrap(~ factor(Phenological.stage, levels = order.ps), nrow = 6, ncol = 1) +
   # scale_color_gradient(palette = "Spectral") +
@@ -88,16 +140,23 @@ p2 <- ggplot(metadata.rarefied, aes(x = Collection.date, y = Shannon)) +
   theme(legend.position = "None", axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = -0.1))
 
 p2
-pdf(file = "images/bar_plots_with_alpha.pdf", height = 10, width = 8)
+
+
+combined_plot <- wrap_plots(
+  p1 + labs(tag = "A"),
+  p2 + labs(tag = "B"),
+  ncol = 2
+) + 
+  plot_annotation(
+    title = " "
+  ) & 
+  theme(plot.margin = margin(25, 25, 5, 5))  # Left padding only for all plots
+
+print(combined_plot)
+# pdf(file = "images/bar_plots_with_alpha.pdf", height = 10, width = 8)
 ## or
-png(filename = "images/alpha and barplot family.png", height = 4500, width = 4000, res = 500)
-ggarrange(p1, NULL, p2, NULL,
-  labels = c("A", " ", "B", " "),
-  ncol = 4, nrow = 1,
-  widths = c(10, 1, 5, 1)
-) + ggtitle("0.01 per sample")
-
-
+png(filename = "images/Fig S4 alpha and barplot genera alphabetically.png", height = 4500, width = 4500, res = 500)
+print(combined_plot)
 dev.off()
 
 
@@ -164,140 +223,123 @@ rm(line1, temp_df)
 
 
 
-# Figure 3 Spadona vs Coscia white bud and initial bloom --------------------------
+# Figure 2E Spadona vs Coscia white bud and initial bloom, height, location in the orchard --------------------------
+
+# A. hight alpha diversities
+# B. location in the orchard alpha diversities
+# C. Initial stages PCoA
+# D Initial stages alpha diversities
+# E. Initial stages bar plot
+
+
 # compare the same phenological stages in both cultivars
 # -
 
-## We are comparing tthe white buds and Initial bloom stages from coscia and spadona
+## We are comparing the white buds and Initial bloom stages from coscia and spadona
 ## In Coscia we analyze only the first collection dates before Erwinia Amylovora took over the population
 
 # load the rarefied initial stages phyloseq object
 ps.initial <- readRDS("Data/phyloseq_initial_stages_rarefied")
 ps.initial
 sample_sums(ps.initial)
+ps.initial.g <- tax_glom(ps.initial, taxrank = "Genus")
 
+# make initial ordination plots
 p.init.pca <- plot_ordination_pears(ps.initial, metadataColumn = "Short.collection.date") 
 p.init.pca  
 p.init.pca.pe <- plot_ordination_pears(ps.initial, metadataColumn = "Phenological.stage") 
 
-ps.initial.g <- tax_glom(ps.initial, taxrank = "Genus")
+## make the bar plot for the initial stages
 data_bars <- make_data_bars1(ps.initial.g,  grouping_var = "CPS")
 data_bars<- data_bars %>%
   mutate(Genus = ifelse(Genus == "uncultured", paste("Uncultured", Family), Genus))
 data_bars <- add_threshold_to_databars(data_bars, 0.01)
 
 positions <- c("Spadona White buds", "Spadona Initial bloom", "", "Coscia White buds", "Coscia Initial bloom")
-p <- PlotBarsGenus(data_bars)
-print(p)
-p1 <- p + scale_x_discrete(
-  limits = positions,
-  labels = c("White buds", "Initial bloom", " ", "White buds", "Initial bloom")) +
-  labs(y = "Relative Abundance\n", x = "\n") +
-  theme(legend.key.size = unit(0.37, "cm"))
-print(p1)
+p_bar <- PlotBarsGenus(data_bars)
+print(p_bar)
 
+
+p_bar1 <- p_bar + scale_x_discrete(
+  limits = positions,
+  labels = c("WB\n\nSpadona", "IB\n", " ", "WB\n\nCoscia", "IB\n")
+) +
+  labs(y = "Relative Abundance\n", x = NULL) +
+  theme(
+    legend.key.size = unit(0.37, "cm"),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 1, lineheight = 0.8, size = 10)
+  )
+
+# Add extra margin at the bottom if needed
+# p_bar1 <- p_bar1 + theme(plot.margin = unit(c(5.5, 5.5, 10, 5.5), "points"))
+
+print(p_bar1)
+
+png("images/figure_2E_initial_stages_barplot_with alphabetised_order.png", height = 2500, width = 3000, res = 400)
+print(p_bar1)
+dev.off()
+
+## make the final ordination plot for the initial stages
 positions <- c("White buds", "Initial bloom", "Full bloom", "Initial petal fall", "Complete petal fall", "Leaf")
 positions <- c("24.03.2019", "27.03.2019", "31.03.2019", "11.04.2019", "13.04.2019")
 p2.0 <- plot_ordination_pears(ps.initial, OrdMeth = "bray", metadataColumn = "CPS", titleAddition = "cultivar and phenological stage")
 # the manual colours are the first four elements of "Set1"
 colorc("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999")
-p2 <- p2.0 +
-  scale_colour_manual(values = c("#E41A1C", "#FF7F00", "#377EB8", "#4DAF4A"), name = NULL) +
-  xlab(paste0("12%\n\n\n\n"))
-print(p2)
+p_ordination_init <- p2.0 +
+  scale_colour_manual(values = c("#E41A1C", "#FF7F00", "#377EB8", "#4DAF4A"), name = NULL) 
+print(p_ordination_init)
 
-
+# make the alpha diversity plots
 alpha_diversity_melt_s <- make_alpha_melted_df(ps.initial, "CPS", index = "Shannon")
 alpha_diversity_melt_c <- make_alpha_melted_df(ps.initial, "CPS", index = "Chao1")
+alpha_diversity_init_df <- rbind(alpha_diversity_melt_c, alpha_diversity_melt_s)
 
-## consider refactorin:
-# 1. use the helper funtion plot_alpha_boxplot
-# 2. use the color schemes from the general definitions file
-positions <- c("Spadona White buds", "Spadona Initial bloom", " ", "Coscia White buds", "Coscia Initial bloom")
-positions_for_legend <- c("Spadona White buds", "Spadona Initial bloom", "Coscia White buds", "Coscia Initial bloom")
-p3 <-
-  ggplot(alpha_diversity_melt_c, aes(x = Group, y = value, fill = Group)) +
+p_alpha_init <- ggplot(alpha_diversity_init_df, aes(x = Group, y = value, fill = Group)) +
   geom_boxplot() +
-  labs(y = "Chao1 index", x = "") +
-  theme_minimal() +
-  scale_x_discrete(limits = positions, labels = c("White buds", "Initial bloom", " ", "White buds", "Initial bloom")) +
+  theme_bw() +
+  geom_jitter(alpha = 0.5, size = 1) +
+  facet_wrap(~measure, scales = "free_y") +
+  scale_x_discrete(limits = c("Spadona White buds", "Spadona Initial bloom", "Coscia White buds", "Coscia Initial bloom"), labels = c("WB\n\nSpadona", "IB", " ", "WB\n\nCoscia", "IB\n")) +
   scale_fill_manual(values = color_values_cps_init) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 12), legend.position = "off") +
-  ggtitle(" ")
-print(p3)
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5, size = 10), legend.position = "off", 
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 10)) +
+  stat_compare_means(comparisons = list(
+    c("Spadona White buds", "Spadona Initial bloom"),
+    c("Coscia White buds", "Coscia Initial bloom")
+  ),
+  method = "wilcox.test", label = "p.signif", size = 4) +  # Adjust label.y to position the labels
+  scale_y_continuous(expand = expansion(mult = c(0.05, 0.15)))
 
-p4 <-
-  ggplot(alpha_diversity_melt_s, aes(x = factor(Group), y = value, fill = Group)) +
-  geom_boxplot() +
-  labs(y = "Shannon", x = "") +
-  theme_minimal() +
-  scale_x_discrete(limits = positions, labels = c("White buds", "Initial bloom", " ", "White buds", "Initial bloom")) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 12), legend.title = element_blank()) +
-  scale_fill_manual(
-    values = color_values_cps_init,
-    name = NULL, limits = positions_for_legend
-  ) +
-  guides(color = guide_legend(reverse = TRUE)) +
-  ggtitle(" ")
-print(p4)
 
-# Test differences of Shannon 
-kruskal.test(value ~ Group, data = alpha_diversity_melt_s)
-# Kruskal-Wallis rank sum test
-# 
-# data:  value by Group
-#Kruskal-Wallis chi-squared = 4.2444, df = 3, p-value = 0.2363
+
+## we now add the following (created in 03.ordination_plots):
+# Chao_Group
+# Shannon_Group
+# Chao_Height
+# Shannon_Height
+
+## arrange with patchworks package. 
 ## 
+#Extract legend from p_bar1
+p_bar1_legend <- get_legend(p_bar1 + theme(legend.position = "right"))
 
-#Test Chao1 
-kruskal.test(value ~ Group, data = alpha_diversity_melt_c)
-# data:  value by Group
-# Kruskal-Wallis chi-squared = 14.3, df = 3, p-value = 0.002524
+# Remove legend from p_bar1
+p_bar1_plot <- p_bar1 + theme(legend.position = "none")
+top_row <- p_alpha_location | p_alpha_height | p_ordination_init
+bottom_row <- p_alpha_init |  p_bar1 | plot_spacer() 
+# Create the layout
+figure_2 <- 
+  top_row / bottom_row +
+    plot_annotation(tag_levels = "A")
 
-shannon_wilcoxon <- pairwise.wilcox.test(alpha_diversity_melt_s$value, alpha_diversity_melt_s$Group, p.adjust.method = "fdr")
-# Pairwise comparisons using Wilcoxon rank sum exact test 
-# 
-# data:  alpha_diversity_melt_s$value and alpha_diversity_melt_s$Group 
-# 
-#                 Coscia Initial bloom Coscia White buds Spadona Initial bloom
-# Coscia White buds     0.35                 -                 -                    
-# Spadona Initial bloom 0.68                 0.35              -                    
-# Spadona White buds    0.35                 0.90              0.42                 
+# Print the figure
+print(figure_2)
 
-# P value adjustment method: fdr 
+png("images/figure_2.png", height = 3000, width = 5500, res = 400)
+print(figure_2)
+dev.off()
 
-Chao_wilcoxon <- pairwise.wilcox.test(alpha_diversity_melt_c$value, alpha_diversity_melt_s$Group, p.adjust.method = "none")
-Chao_wilcoxon
-# Pairwise comparisons using Wilcoxon rank sum exact test 
-# 
-# data:  alpha_diversity_melt_c$value and alpha_diversity_melt_s$Group 
-# 
-#               Coscia Initial bloom Coscia White buds Spadona Initial bloom
-# Coscia White buds     0.00119              -                 -                    
-# Spadona Initial bloom 0.77869              0.26018           -                    
-# Spadona White buds    0.00027              0.01801           0.04476              
-
-# P value adjustment method: none 
-
-top_row <- ggpubr::ggarrange(p1, NULL,
-  labels = c("D", ""),
-  nrow = 1, ncol = 2,
-  widths = c(20, 6)
-)
-bottom_row <- ggpubr::ggarrange(p2, NULL, p3, NULL, p4,
-  labels = c("A", " ", "B", " ", "C"),
-  nrow = 1, ncol = 5,
-  widths = c(20,0.5, 6, 0.5, 12)
-)
-p5 <- ggpubr::ggarrange( bottom_row, top_row,
-  nrow = 2
-)
-
-
-p5
-png(file = "images/Fig 3 Cultivar comparison.png", width = 5000, height = 4000, res = 500)
-print(p5)
-dev.off() 
 
 # alpha plot coscia no leaves ---------------------------------------------
 # a comparison of alpha diversities of Coscia flowers 
@@ -316,3 +358,89 @@ p3 <- ggplot(metadata.rarefied.c.f, aes(x = Collection.date, y = Shannon, color 
   theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = -0.1))
 p3
 
+
+# bar plot of the last 3 pjhenological stages -----------------------------
+
+ps.end <- ps.genera %>%
+  subset_samples(CPS == "Coscia Full bloom" | CPS == "Coscia Initial petal fall" | CPS == "Coscia Complete petal fall")
+meta.end <- as.data.frame(sample_data(ps.end)) 
+unique(meta.end$CPS)
+ 
+data_bars <- psmelt(ps.end)
+taxa_bar_plot(ps.end, "sample_Sample")
+  
+
+number_of_phyla <- length(unique(data_bars$Genus))
+getPalette <- colorRampPalette(brewer.pal(9, "Set1"))(number_of_phyla)
+ggplot(data_bars, aes(x = sample_Sample, y = Abundance, fill = forcats::fct_reorder(Genus, Abundance)) )+
+  # geom_bar(position = "stack") +
+  geom_col() +
+  scale_fill_manual(values = rev(getPalette)) +
+  theme_minimal() +
+  theme(legend.position = "right", axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = -0.1)) +
+  labs(y = "Relative Abundance\n", x = "\n", fill = taxrank) +
+  guides(fill = guide_legend(ncol = 1)) +
+  theme(
+    legend.title = element_text(size = 8),
+    legend.text = element_text(size = 8),
+    legend.key.size = unit(1, "lines")
+  )
+
+
+# bar plots of most abundant genera in leaves and flowers -----------------
+
+ps.genera <- ps %>%
+  tax_glom(taxrank = "Genus")
+ps.genera_flowers <- ps.genera %>%
+  subset_samples(Flower.or.leaf == "Flower")
+ps.genera_leaves <- ps.genera %>%
+  subset_samples(Flower.or.leaf == "Leaf")
+
+
+
+db.all <- rbind(db.leaves, db.flowers)
+
+db.all$Sample <- factor(db.all$Sample, levels = positions_cd_s)
+
+
+tbpf <- basic_bar_plot(db.all) +
+  facet_wrap(~ factor(Flower.or.leaf)) +
+  scale_x_discrete(limits = positions_cd_s) +
+  ggtitle("The most abundant Genera in pear leaves and flowers\n") +
+  labs(x = "\n", y = "Relative Abundance\n") +
+  theme(
+    axis.text = element_text(size = 16),          # Axis tick labels
+    axis.title = element_text(size = 18),         # Axis titles
+    strip.text = element_text(size = 18),         # Facet titles
+    legend.text = element_text(size = 16),        # Legend text
+    legend.title = element_text(size = 16),       # Legend title
+    plot.title = element_text(size = 20, hjust = 0.5) # Plot title, centered
+  )
+
+print(tbpf)
+
+png("images/Genera in flowers and leaves.png", height = 4500, width = 10000, res = 750)
+print(tbpf)
+dev.off()
+
+
+db.leatbpfdb.leaves <- make_data_bars1(ps.genera_leaves, 0.005, "Short.collection.date", RA = TRUE) 
+
+tbpf <- basic_bar_plot(db.leaves) +
+  scale_x_discrete(limits = positions_cd_s) +
+  ggtitle("The most abundant Genera in leaves") +
+  labs(x = "\n", y = "Relative Abundance\n")  
+ 
+  # guides(fill = guide_legend(ncol = 1))
+print(tbpf)
+
+db.flowers <- make_data_bars1(ps.genera_flowers, 0.005, "Short.collection.date", RA = TRUE) 
+
+tbpf2 <- basic_bar_plot(db.flowers) +
+  scale_x_discrete(limits = positions_cd_s) +
+  ggtitle("The most abundant Genera in flowers") +
+  labs(x = "\n", y = "Relative Abundance\n")
+print(tbpf2)
+
+combined_plot <-  wrap_plots(tbpf2, tbpf, ncol = 2)
+print(combined_plot)

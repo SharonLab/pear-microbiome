@@ -43,15 +43,18 @@ PlotBarsGenus <- function(data_bars, x_group = "Sample") {
   taxrank <- "Genus"
   
   all_taxa <- unique(data_bars[[taxrank]])
-  all_taxa_except_Erwinia <- all_taxa[all_taxa != "Erwinia"]
-  
-  getPalette = colorRampPalette(brewer.pal(9, "Set1"))
+  all_taxa_except_Erwinia <- all_taxa[all_taxa != "Erwinia" & all_taxa != "< 0.01 abund."]
+  # add more colors
+  combined_colors <- c(  brewer.pal(8, "Set1"), brewer.pal(12, "Set3")) 
+
+  getPalette = colorRampPalette( combined_colors)
   
   my_palette <- setNames(getPalette(length(all_taxa_except_Erwinia)), all_taxa_except_Erwinia)
   my_palette["Pseudomonas"] <- "green4"
   my_palette["Erwinia"] <- "red"
+  my_palette["< 0.01 abund."] <- "darkgray"
   
-  data_bars[[taxrank]] <- factor(data_bars[[taxrank]], levels = c(rev(all_taxa_except_Erwinia), "Erwinia"))
+  data_bars[[taxrank]] <- factor(data_bars[[taxrank]], levels = c("< 0.01 abund.", sort(all_taxa_except_Erwinia), "Erwinia"))
   
   p2 <- ggplot(data_bars, aes(x = get(x_group), y = Abundance, fill = get(taxrank))) + 
     geom_bar(stat = "identity") +

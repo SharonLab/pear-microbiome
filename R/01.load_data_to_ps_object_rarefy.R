@@ -34,7 +34,7 @@ library(ggplot2)
 library(RColorBrewer)
 library(microViz)
 detach("package:tidytree", unload = TRUE)
-setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
+#setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
 
 # load_data_onto_phyloseq -------------------------------------------------
 
@@ -79,6 +79,7 @@ metadata$cd.ps <- paste0(metadata$Collection.date, " ", metadata$Phenological.st
 ## create a new column where we only have the day and mobth without the year
 metadata$Collection.date <- as.character(metadata$Collection.date)
 metadata$Short.collection.date <- gsub("\\.\\d{4}$", "", metadata$Collection.date)
+metadata$CPS <- paste(metadata$Cultivar , metadata$Phenological.stage)
 sample_data(ps) <- metadata
 
 # Save_ps_into_file -------------------------------------------------------
@@ -254,6 +255,40 @@ flowers <- ggplot(data = rarefaction_curve_data_summary_verbose.obs, aes(
   ggtitle("Rarefaction curve no Buchnera")
 print(flowers)
 
+# Re-do taxonomy ----------------------------------------------------------
+# Given the subsequent use of "-ota" phyla names, Proteobacteria should be "Pseudomonadota" to be consistent. Also appears elsewhere in the manuscript.
+# Aia: check if all Proteobacteria go to Pseudomonadota. Change also Firmicutes
+## above are the reviewer's comments. 
+## steps:
+# 1. make a phyloeseq with only proteobacteria
+# 2. check if they are all or nearly all pseudomonadota
+# 3. change the taxonomy accordingly
+# 4. apply the changes to the taxonomy of the main phyloseq
+# 5. change all firmicutes to Bacillota
+# 6. re-do the graphs. if it looks well, save te changes to "Data/phyloseq_all_data and re-run this script. 
+
+ps.all <- readRDS("Data/phyloseq_no_buchnera")
+# 1. make a phyloeseq with only proteobacteria
+ps.proteobacteria <- ps.all %>%
+  subset_taxa(Phylum == "Proteobacteria")
+unique(data.frame(tax_table(ps.proteobacteria))$Class)
+pseudo.tax.table <- data.frame(tax_table(ps.proteobacteria))
+pseudo.tax.table[pseudo.tax.table$Class == "Proteobacteria Phylum",]
+ps.proteobacteria_phylum <- subset_taxa(ps.proteobacteria, Class == "Proteobacteria Phylum")
+sum(taxa_sums(ps.proteobacteria_phylum))
+## this is equal to 133 reads, with 2-5 reads for each ASV. so we can also classify them as Pseudomonadota. 
+tax_all <- data.frame(tax_table(ps.all))
+tax_all$Phylum[tax_all$Phylum == "Proteobacteria"] <- "Pseudomonadota"
+tax_all$Phylum[tax_all$Phylum == "Firmicutes"] <- "Bacillota"
+tax_all$Phylum[tax_all$Phylum == "Cyanobacteria"] <- "Cyanobacteriota"
+tail(taxa_names(ps.all))
+tail(rownames(tax_all))
+tax_table(ps.all) <- as.matrix(tax_all)
+saveRDS(ps.all, "Data/phyloseq_no_buchnera")
+
+ps.no.buchnera.rarefied <- rarefy_even_depth(ps.all, sample.size = 2432, replace = FALSE)
+
+saveRDS(ps.no.buchnera.rarefied, file = "Data/phyloseq_all_data_rarefied_noB")
 
 
 # Coscia only ----------------------------------------------------------
@@ -598,4 +633,5 @@ erwinia_seqs <- subset(rep_seqs, seq.name %in% hash.list)
 erwinia_seqs <- erwinia_seqs[order(match(erwinia_seqs$seq.name, erwinia_tax$hash)), ]
 
 writeFasta(erwinia_seqs, "buchnera-rep-seqs.fasta")
+
 
