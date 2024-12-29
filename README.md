@@ -1,23 +1,20 @@
-# This is a GitHub repository of the code used for the publication titled: Pear flower and leaf microbiome dynamics during the naturally occuring spread of Erwinia amylovora
+# Pear flower and leaf microbiome - supporting code and data 
 
-The files in this repository have the code for re-creating the results described in the paper. 
+This repository contains the data and code used to generate the results in the paper *Pear flower and leaf microbiome dynamics during the naturally occuring spread of Erwinia amylovora*.\
+Raw reads and metadata are available via SRA with BioProject identifier PRJNA1043619.
 
-The first step is running the script 01.load_data_to_ps_object_rarefy.R, which creates the phyloseq objects used in the rest of the code, using the qiime2 output located in the data folder. 
+## Contents of this repository
+### Data
+Data was generated using qiime.
 
-The rest of the scripts, despite being numbered, can be used in any order. 
+### R
+Contains the code used to generate the results. Your starting point is the script **01.load_data_to_ps_object_rarefy.R**, which creates the phyloseq objects used in the rest of the code, using the qiime2 output located in the data folder. The rest of the scripts can be used in any order. 
 
-# Author list:
-Aia Oz1, Orly Mairesse2,3, Shira Raikin2, Hila Hanani1, Hadar Mor1, Mery Dafny Yelin2,# and Itai Sharon1,3,# 
+## How to cite
+Pear flower and leaf microbiome dynamics during the naturally occuring spread of Erwinia amylovora (2025).\
+Aia Oz $^{\*}$, Orly Mairesse $^{\*}$, Shira Raikin, Hila Hanani, Hadar Mor, Mery Dafny Yelin $^{\+}$ and Itai Sharon $^{\+}$. *Submitted*. 
 
-1 Migal – Galilee Technology Center, Kiryat Shmona, Israel
-
-2 Northern Agriculture Research & Development, Migal–Galilee Technology Center, Kiryat Shemona, Israel
-
-3 Faculty of Sciences and Technology, Tel-Hai Academic College, Upper Galilee, Israel
-
-Aia Oz and Orly Meiresse contributed equally to this work. 
-
-Itai Sharon and Mery Dafni-Yelin are the corresponding authors.
-
+$^{\*}$ Equal contribution\
+$^{\+}$ Corresponding authors
 
 
