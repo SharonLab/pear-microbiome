@@ -34,7 +34,6 @@ library(ggplot2)
 library(RColorBrewer)
 library(microViz)
 detach("package:tidytree", unload = TRUE)
-#setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
 
 # load_data_onto_phyloseq -------------------------------------------------
 

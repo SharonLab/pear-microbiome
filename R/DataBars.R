@@ -1,4 +1,5 @@
 ## data_bars is a dataframe that is required for creating the taxonomic bar plot
+# this script contains helper functions for the pear microbiome project. 
 
 
 MakeDataBarsDefault <- function(ps, grouping) {

@@ -1,3 +1,5 @@
+# calculate bacteria abundances, as well as the number of reads in each sample, the percentages of mitochondria and chloroplast  the number of microbiome reads
+# in each sample and other statistics.
 library(phyloseq)
 library(ggplot2)
 library(dplyr)

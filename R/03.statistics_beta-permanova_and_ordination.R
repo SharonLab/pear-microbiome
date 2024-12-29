@@ -1,5 +1,5 @@
 ## PERMANOVA using vegan::adonis function, on bray curtis beta matrix
-#
+# this code calculates the statistics used in the manuscript and the results are detailed in table S4
 
 # load_packages -----------------------------------------------------------
 library(phyloseq)
@@ -12,7 +12,7 @@ library(ggplot2)
 library(writexl)
 library(ggpubr)
 
-setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
+
 ## tested on 13-3-2023 till line 258
 ## re-tested on 8-8-23
 ## the different tests are performed on phyloseqs with different rarefaction depths

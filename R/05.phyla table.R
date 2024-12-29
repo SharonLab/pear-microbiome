@@ -1,3 +1,5 @@
+# calculate the phyla table - supplementary table 3 the table that depicts 
+# the average relative abundance for each phylum by phenological stage and collection date
 library(phyloseq)
 library(dplyr)
 library(tidyr)

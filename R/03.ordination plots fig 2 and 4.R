@@ -15,8 +15,6 @@ library(ggsignif)
 source("R/02.general_definitions.R")
 source("R/02.helper_functions.R")
 
-setwd("/Users/aiaoz/qiime2.aia.filter/R_pears")
-
 ## load data
 ps <- readRDS("Data/phyloseq_no_buchnera")
 ps.rarefied <- readRDS("Data/phyloseq_all_data_rarefied_noB")

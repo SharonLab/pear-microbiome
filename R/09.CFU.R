@@ -1,3 +1,4 @@
+# this script uses the cfu counts to create the cfu figures in the paper 
 library(readxl)
 library(ggplot2)
 library(dplyr)

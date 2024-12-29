@@ -1,3 +1,4 @@
+# create Figure S1 - weather data. 
 library(readxl)
 library(ggplot2)
 library(reshape2)
@@ -5,7 +6,7 @@ library(dplyr)
 library(grid)
 library(phyloseq)
 library(RColorBrewer)
-# setwd("~/qiime/fire-blight/pear.flower/20200125/qiime2.aia.filter/R_pears")
+
 
 weather1 <- read_excel("Data/weather1.xlsx")
 ps <- readRDS("Data/pear_phyloseq_filtered")

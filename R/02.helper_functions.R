@@ -1,3 +1,5 @@
+# helper functions used in the pear microbiome manuscript
+
 library(phyloseq)
 library(ggplot2)
 library(dplyr)

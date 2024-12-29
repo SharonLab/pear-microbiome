@@ -1,3 +1,8 @@
+
+# this is the script for the core microbiome analysis. 
+# It generates the core microbiome heatmaps (Fig S9), 
+# as well as other figures that did not go into the manuscript: the heatmaps of all the taxonomic levels, and barplots for the core microbiome. 
+
 library(microbiome)
 library(phyloseq)
 library(RColorBrewer)
