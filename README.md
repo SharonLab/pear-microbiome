@@ -5,7 +5,7 @@ Raw reads and metadata are available via SRA with BioProject identifier PRJNA104
 
 ## Contents of this repository
 ### Data
-Data was generated using qiime.
+Data was generated using qiime2 as specified in the run-pears-qiime2.sh script.
 
 ### R
 Contains the code used to generate the results. Your starting point is the script **01.load_data_to_ps_object_rarefy.R**, which creates the phyloseq objects used in the rest of the code, using the qiime2 output located in the data folder. The rest of the scripts can be used in any order. 
